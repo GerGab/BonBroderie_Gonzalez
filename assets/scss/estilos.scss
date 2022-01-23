@@ -1,0 +1,18 @@
+/*Configuracion General*/
+*{
+    margin:0;
+    top:0;
+    padding:0;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 3px;
+}
+@import "variables";
+@import "header";
+@import "titulos";
+@import "contenedores";
+@import "imagenes";
+@import "tabla";
+@import "shop";
+@import "formulario";
+@import "footer";
+@import "mediaQuery";

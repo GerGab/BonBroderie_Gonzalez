@@ -1,0 +1,212 @@
+@media (max-width: 1200px/*860px*/ ) {
+    .header{
+        font-size: 0.8rem;
+    }
+
+    .miImg{
+        max-height: 350px;
+    }
+
+    .cursoImg {
+        max-width: 200px;
+    }
+
+    .imgFloat {
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+        width: 250px;
+    }
+
+    .contenedorCentrado{
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+    }
+
+    /*Cursos y tabla*/
+    .cursoCard {
+        width: 225px;
+    }
+
+    .tabla{
+        width: 80%;
+
+        table{
+            height: 60%;
+            width: 80%;
+            margin: 0 auto 0 auto;
+            text-align: center;
+            font-size: 0.8rem;
+        }
+    }
+
+    /*Seccion Shop*/
+    
+    .bordadosGrid {
+        width: 80%;
+        margin:auto;
+        display: grid;
+        grid-template-areas:"letras sweaters" 
+        "flores cactus";
+        column-gap: 25px;
+        row-gap: 25px;
+        align-items: flex-start;
+    }
+    .insumosGrid {
+        width: 80%;
+        margin:auto;
+        display: grid;
+        grid-template-areas:"verano invierno"
+         "primavera otono"
+            "tijera tela" 
+            "bambu flexi";
+        column-gap: 25px;
+        row-gap: 25px;
+        align-content: center;
+    }
+
+    /*Seccion arma tu pedido*/
+    .contactoGrid {
+        margin: 4% auto;
+        grid-template-areas:"nombre nombre"
+            "apellido apellido"
+            "telefono telefono"
+            "direccion direccion"
+            "email email"
+            "retiro envio";
+        column-gap: 10px;
+        row-gap: 15px;
+    }
+    .pedidoGrid{
+        width: 60%;
+        margin: 4% auto;
+        grid-template-areas:"bastidor "
+            "tamano"
+            "tela "
+            "colores"
+            "pedir "
+            "limpiar";
+        column-gap: 10px;
+        row-gap: 15px;
+        order:2;
+    }
+
+
+
+    /*footer*/
+    .footer{
+        padding: 0 5%;
+    }
+
+    
+}
+
+@media (max-width: 860px) {
+   
+    .navUlMod{
+        width: auto;
+        justify-content: center;
+    }
+
+    h1{
+        font-size: 1.25rem;
+        margin: 2% 5%;
+    }
+    h2{
+        font-size: 1rem;
+        margin: 2% 5%;
+    }
+
+    .bigImage {
+        max-height: 400px;
+        max-width: 320px;
+    }
+
+    .miImg{
+        max-height: 300px;
+        width: auto;
+    }
+
+    iframe{
+        width: 320px; 
+        height:180px;
+    }
+
+    .imgFile{
+        width: 200px;
+        height: 200px;
+    }
+
+    .contenedor{
+        flex-direction: column;
+        align-content: center;
+    }
+
+    /*Seccion Shop*/
+    .shopBand {
+        background: linear-gradient(to bottom, $webColor 0%,$webColor 100% );
+    }
+
+    .bordadosGrid {
+        width: 80%;
+        margin:auto;
+        display: grid;
+        grid-template-areas:"letras" 
+        "sweaters" 
+        "flores" 
+        "cactus";
+        column-gap: 25px;
+        row-gap: 25px;
+        align-items: flex-start;
+    }
+    .insumosGrid {
+        width: 80%;
+        margin:auto;
+        display: grid;
+        grid-template-areas:"verano" 
+        "invierno"
+         "primavera" 
+         "otono"
+            "tijera" 
+            "tela" 
+            "bambu"
+             "flexi";
+        column-gap: 25px;
+        row-gap: 25px;
+        align-content: center;
+    }
+
+    .footer {
+        p {
+            font-size: 0.8rem;
+            padding-top: 5vh;
+        }
+        div{
+            width: 130px;
+            height: 160px;
+            margin: 5% 3%;
+            text-align: center;
+
+            ul li{
+                text-align: center;
+                font-size: 0.6rem;
+            }
+        }
+        h3{
+            font-size: 1rem;
+        }
+    }
+}
+
+@media (max-width: 550px) {
+    .carousel{
+
+        &Small{
+            display:block;
+        }
+        &Large{
+            display:none;
+        }
+    }
+}

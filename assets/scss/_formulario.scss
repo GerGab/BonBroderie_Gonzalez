@@ -1,0 +1,123 @@
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+fieldset {
+    width: 70vw;
+    margin: auto;
+    background-color: $webColor;
+    border: none;
+    margin: 3% 0;
+    padding: 0 0 2% 0;
+    position: relative;
+    
+}
+
+.contactoGrid {
+    width: 60%;
+    margin:auto;
+    display: grid;
+    grid-template-areas:"nombre apellido"
+        "telefono direccion"
+        "email email"
+        "retiro envio";
+    column-gap: 20px;
+    row-gap: 25px;
+    align-content: center;
+}
+
+.nombre {
+    grid-area: nombre;
+}
+.apellido {
+    grid-area: apellido;
+}
+.tel {
+    grid-area: telefono;
+}
+.dir {
+    grid-area: direccion;
+}
+.email {
+    grid-area: email;
+}
+.retiro {
+    grid-area: retiro;
+}
+.envio {
+    grid-area: envio;
+}
+
+.pedidoGrid{
+    width: 40%;
+    display: grid;
+    margin: 15px;
+    grid-template-areas:"bastidor tamano"
+        "tela colores"
+        "pedir limpiar";
+    column-gap: 20px;
+    row-gap: 25px;
+    align-content: center;
+}
+
+.bastidor {
+    grid-area: bastidor;
+}
+.tamano{
+    grid-area: tamano;
+}
+.tela {
+    grid-area: tela;
+}
+.colores {
+    grid-area: colores;
+}
+.imagen {
+    grid-area: imagen;
+}
+.pedir {
+    grid-area: pedir;
+}
+.limpiar {
+    grid-area: limpiar;
+}
+.seleccionar {
+    grid-area: seleccionar;
+}
+
+input{
+    height: 36px;
+}
+
+select{
+    height: 36px;
+}
+/*Selector de Imagen Formulario*/
+.file{
+    display: none;
+
+    &Label{
+        display: flex;
+        height: 32px;
+        background-color: rgb(233, 229, 229);
+        border-radius: 4px;
+        border: gray solid 2px;
+        width: 200px;
+        justify-content: center;
+        align-items: center;
+
+        &:hover{
+            background-color: rgb(209, 209, 209);
+            border: rgb(89, 89, 89) solid 2px;
+        }
+    }
+}
+
+.imgFile{
+    width: 250px;
+    height: 250px;
+    border: gray solid 1px;
+}

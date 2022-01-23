@@ -1,0 +1,28 @@
+.contenedor{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.contenedorCentrado{
+    @extend .contenedor;
+    flex-direction: row;
+    align-items: center;
+}
+
+.containerVertical {
+    @extend .contenedor;
+    flex-flow: column;
+    align-items: center;
+}
+
+.flexItem {
+    margin: 15px 20px;
+}
+
+.cursoCard {
+    width: 300px;
+    overflow-wrap: break-word;
+}
+

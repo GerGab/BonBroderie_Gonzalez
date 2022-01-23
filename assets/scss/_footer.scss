@@ -1,0 +1,43 @@
+/*Auxiliar para creación de linea divisoria*/
+.line{
+    margin: 40px 0 40px 0;
+    width: 50vw;
+    height: 2px;
+    position: relative;
+    left: 25vw;
+    background-color: gray;
+}
+
+/*configuracion del footer*/
+.footer {
+    text-align: center;
+    background-color:  $webColor;
+    background-clip: content-box;
+    padding: 0 20vw 0vh 20vw;
+    font-size: 1.2rem;
+
+    p {
+        font-size: 1.25rem;
+        padding-top: 5vh;
+    }
+
+    div{
+        height: 200px;
+        width: 200px;
+        display: inline-block;
+        margin: 5% 10%;
+        position: relative;
+        text-align: left;
+
+        ul li{
+            list-style-type: none;
+            margin:  15% 0;
+            text-align: left;
+        }
+    }
+
+}
+
+ol, ul {
+    padding-left: 0;
+}

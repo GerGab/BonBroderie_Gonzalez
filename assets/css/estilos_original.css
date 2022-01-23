@@ -1,0 +1,613 @@
+/* Reseteo general*/
+*{
+    margin:0;
+    top:0;
+    padding:0;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 3px;
+}
+
+/*Config Header*/
+.header {
+    width: 100%;
+    background-color:  rgb(229, 197, 185);
+    position: relative;
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 3%;
+    
+}
+
+.banner {
+    width: 100%;
+}
+
+.navbar {
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+}
+
+.navModificado {
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    background-color: rgb(229, 197, 185);
+}
+
+.togglerMod {
+    width: 1rem;
+    height: 1rem;
+}
+
+.navUlMod{
+    width: 80%;
+    justify-content: center;
+}
+
+.header nav ul li{
+    list-style-type: none;
+    margin: 0 1%;
+    align-items: center;
+    display: inline-block;
+
+}
+
+.navbar-toggler:focus {
+    text-decoration: none;
+    outline: 0;
+    box-shadow: 0 0 0 0;
+}
+
+a:link, a:visited,  a:hover, a:active{
+    color: black;
+    text-decoration: none;
+}
+
+/* Config general para titulos y contenido*/
+h1{
+    margin-top: 3%;
+    margin-bottom: 0;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.25 rem;
+    margin: 1%;
+    text-align: center;
+}
+
+.noTitle {
+    font-size: 1.5rem;
+    margin: auto;
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: 0.5px;
+    font-style: italic;
+    max-width: 60%;
+}
+/*Flexbox de contenido*/
+.contenedor{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.contenedorCentrado{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.shopBand {
+    margin: auto;
+    width: 70vw;
+    background-color: rgb(229, 197, 185);
+    background: linear-gradient(to bottom, white 0%, white 50% , rgb(229, 197, 185) 50%,rgb(229, 197, 185) 100% )
+}
+
+.changeImage{
+    transition: transform 1s;
+}
+
+.changeImage:hover{
+    transform: scale(1.1);
+}
+
+.containerVertical {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.flexItem {
+    margin: 15px 20px;
+}
+
+/*Ajuste de imagenes puntuales*/
+
+.miImg {
+    max-width: 250px;
+}
+
+.cursoImg {
+    max-width: 300px;
+}
+
+.imgFloat {
+    float: left;
+    margin-left: 5%;
+    margin-right: 2%;
+}
+
+iframe{
+    width: 560px; 
+    height:315px;
+}
+
+.bigImage {
+    max-height: 400px;
+}
+
+.slideImage{
+    max-height: 600px;
+}
+
+/*Ajuste de tablas (posiblemente a retirar a futuro)*/
+.tabla{
+    width: 60%;
+    margin: 50px auto 50px auto;
+    background-color: rgb(229, 197, 185);
+    padding: 3vh 0;
+}
+
+.tabla table{
+    height: 60%;
+    width: 80%;
+    margin: 0 auto 0 auto;
+    text-align: center;
+}
+
+tbody, td, tfoot, th, thead, tr {
+    border-color: inherit;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.center{
+    text-align: center;
+}
+.left {
+    text-align: left;
+    margin-left: 10%;
+}
+/*Shop Grid*/
+
+.insumosGrid {
+    width: 80%;
+    margin:auto;
+    display: grid;
+    grid-template-areas:"verano invierno primavera otono"
+        "tijera tela bambu flexi";
+    column-gap: 25px;
+    row-gap: 25px;
+    align-content: center;
+}
+
+.ver {
+    grid-area: verano;
+}
+.inv {
+    grid-area: invierno;
+}
+.prim {
+    grid-area: primavera;
+}
+.oto {
+    grid-area: otono;
+}
+.tijera {
+    grid-area: tijera;
+}
+.tela {
+    grid-area: tela;
+}
+.bambu {
+    grid-area: bambu;
+}
+.flexi {
+    grid-area: flexi;
+}
+
+.bordadosGrid {
+    width: 80%;
+    margin:auto;
+    display: grid;
+    grid-template-areas:"letras sweaters flores cactus";
+    column-gap: 25px;
+    row-gap: 25px;
+    align-items: flex-start;
+}
+.letras {
+    grid-area: letras;
+}
+.sweaters {
+    grid-area: sweaters;
+}
+.flores {
+    grid-area: flores;
+}
+.cactus {
+    grid-area: cactus;
+}
+/* Ajustes para formulario*/
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+fieldset {
+    width: 70vw;
+    margin: auto;
+    background-color: rgb(229, 197, 185);
+    border: none;
+    margin: 3% 0;
+    padding: 0 0 2% 0;
+    position: relative;
+    
+}
+
+.contactoGrid {
+    width: 60%;
+    margin:auto;
+    display: grid;
+    grid-template-areas:"nombre apellido"
+        "telefono direccion"
+        "email email"
+        "retiro envio";
+    column-gap: 20px;
+    row-gap: 25px;
+    align-content: center;
+}
+
+.nombre {
+    grid-area: nombre;
+}
+.apellido {
+    grid-area: apellido;
+}
+.tel {
+    grid-area: telefono;
+}
+.dir {
+    grid-area: direccion;
+}
+.email {
+    grid-area: email;
+}
+.retiro {
+    grid-area: retiro;
+}
+.envio {
+    grid-area: envio;
+}
+
+.pedidoGrid{
+    width: 40%;
+    display: grid;
+    margin: 15px;
+    grid-template-areas:"bastidor tamano"
+        "tela colores"
+        "pedir limpiar";
+    column-gap: 20px;
+    row-gap: 25px;
+    align-content: center;
+}
+
+.bastidor {
+    grid-area: bastidor;
+}
+.tamano{
+    grid-area: tamano;
+}
+.tela {
+    grid-area: tela;
+}
+.colores {
+    grid-area: colores;
+}
+.imagen {
+    grid-area: imagen;
+}
+.pedir {
+    grid-area: pedir;
+}
+.limpiar {
+    grid-area: limpiar;
+}
+.seleccionar {
+    grid-area: seleccionar;
+}
+
+input{
+    height: 36px;
+}
+
+select{
+    height: 36px;
+}
+
+/*Selector de Imagen Formulario*/
+.file{
+    display: none;
+}
+
+.imgFile{
+    width: 250px;
+    height: 250px;
+    border: gray solid 1px;
+}
+
+.fileLabel{
+    display: flex;
+    height: 32px;
+    background-color: rgb(233, 229, 229);
+    border-radius: 4px;
+    border: gray solid 2px;
+    width: 200px;
+    justify-content: center;
+    align-items: center;
+}
+
+.fileLabel:hover{
+    background-color: rgb(209, 209, 209);
+    border: rgb(89, 89, 89) solid 2px;
+}
+
+
+/*--------------------*/
+/*Auxiliar para creación de linea divisoria*/
+.line{
+    margin: 40px 0 40px 0;
+    width: 50vw;
+    height: 2px;
+    position: relative;
+    left: 25vw;
+    background-color: gray;
+}
+
+/*configuracion del footer*/
+.footer {
+    text-align: center;
+    background-color:  rgb(229, 197, 185);
+    background-clip: content-box;
+    padding: 0 20vw 0vh 20vw;
+    font-size: 1.2rem; 
+}
+
+.footer p {
+    font-size: 1.25rem;
+    padding-top: 5vh;
+}
+
+.footer div{
+    height: 200px;
+    width: 200px;
+    display: inline-block;
+    margin: 5% 10%;
+    position: relative;
+    text-align: left;
+}
+.footer div ul li{
+    list-style-type: none;
+    margin:  15% 0;
+    text-align: left;
+}
+
+ol, ul {
+    padding-left: 0;
+}
+
+
+@media (max-width: 1200px/*860px*/ ) {
+    .header{
+        font-size: 0.8rem;
+    }
+
+    .miImg{
+        max-height: 350px;
+    }
+
+    .cursoImg {
+        max-width: 200px;
+    }
+
+    .imgFloat {
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+        width: 250px;
+    }
+
+    .contenedorCentrado{
+        flex-direction: column;
+        align-content: center;
+    }
+
+    /*Cursos tabla*/
+    .tabla{
+        width: 80%;
+    }
+    
+    .tabla table{
+        height: 60%;
+        width: 80%;
+        margin: 0 auto 0 auto;
+        text-align: center;
+        font-size: 0.8rem;
+    }
+
+    /*Seccion Shop*/
+    
+    .bordadosGrid {
+        width: 80%;
+        margin:auto;
+        display: grid;
+        grid-template-areas:"letras sweaters" 
+        "flores cactus";
+        column-gap: 25px;
+        row-gap: 25px;
+        align-items: flex-start;
+    }
+    .insumosGrid {
+        width: 80%;
+        margin:auto;
+        display: grid;
+        grid-template-areas:"verano invierno"
+         "primavera otono"
+            "tijera tela" 
+            "bambu flexi";
+        column-gap: 25px;
+        row-gap: 25px;
+        align-content: center;
+    }
+
+    /*Seccion arma tu pedido*/
+    .contactoGrid {
+        margin: 4% auto;
+        grid-template-areas:"nombre nombre"
+            "apellido apellido"
+            "telefono telefono"
+            "direccion direccion"
+            "email email"
+            "retiro envio";
+        column-gap: 10px;
+        row-gap: 15px;
+    }
+    .pedidoGrid{
+        width: 60%;
+        margin: 4% auto;
+        grid-template-areas:"bastidor "
+            "tamano"
+            "tela "
+            "colores"
+            "pedir "
+            "limpiar";
+        column-gap: 10px;
+        row-gap: 15px;
+        order:2;
+    }
+
+
+
+    /*footer*/
+    .footer{
+        padding: 0 5%;
+    }
+
+    
+}
+
+@media (max-width: 860px) {
+   
+
+    .navUlMod{
+        width: auto;
+        justify-content: center;
+    }
+
+    h1{
+        font-size: 1.25rem;
+        margin: 2% 5%;
+    }
+    h2{
+        font-size: 1rem;
+        margin: 2% 5%;
+    }
+
+    .bigImage {
+        max-height: 400px;
+        max-width: 320px;
+    }
+
+    .miImg{
+        max-height: 300px;
+        width: auto;
+    }
+
+    iframe{
+        width: 320px; 
+        height:180px;
+    }
+
+    .imgFile{
+        width: 200px;
+        height: 200px;
+    }
+
+    .contenedor{
+        flex-direction: column;
+        align-content: center;
+    }
+
+    /*Seccion Shop*/
+    .shopBand {
+        background: linear-gradient(to bottom, rgb(229, 197, 185) 0%,rgb(229, 197, 185) 100% );
+    }
+
+    .bordadosGrid {
+        width: 80%;
+        margin:auto;
+        display: grid;
+        grid-template-areas:"letras" 
+        "sweaters" 
+        "flores" 
+        "cactus";
+        column-gap: 25px;
+        row-gap: 25px;
+        align-items: flex-start;
+    }
+    .insumosGrid {
+        width: 80%;
+        margin:auto;
+        display: grid;
+        grid-template-areas:"verano" 
+        "invierno"
+         "primavera" 
+         "otono"
+            "tijera" 
+            "tela" 
+            "bambu"
+             "flexi";
+        column-gap: 25px;
+        row-gap: 25px;
+        align-content: center;
+    }
+
+    .footer p {
+        font-size: 0.8rem;
+        padding-top: 5vh;
+    }
+    .footer div{
+        width: 130px;
+        height: 160px;
+        margin: 5% 3%;
+        text-align: center;
+    }
+
+    .footer div h3{
+        font-size: 1rem;
+    }
+
+    .footer div ul li{
+        text-align: center;
+        font-size: 0.6rem;
+    }
+
+}

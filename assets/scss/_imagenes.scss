@@ -1,0 +1,45 @@
+@mixin imagenStandard ($anchoMax) {
+    max-width: $anchoMax;
+}
+
+.miImg {
+    @include imagenStandard(250px);
+}
+
+.cursoImg {
+    @include imagenStandard(300px);
+}
+
+.imgFloat {
+    float: left;
+    margin-left: 5%;
+    margin-right: 2%;
+}
+
+iframe{
+    width: 560px; 
+    height:315px;
+}
+
+.bigImage {
+    max-height: 400px;
+}
+
+.slideImage{
+    max-height: 600px;
+}
+
+.changeImage{
+    transition: transform 1s;
+
+    &:hover{
+        transform: scale(1.1);
+    }
+}
+
+.carousel {
+
+    &Small{
+        display:none;
+    }
+}

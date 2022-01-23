@@ -1,0 +1,27 @@
+.tabla{
+    width: 60%;
+    margin: 50px auto 50px auto;
+    background-color: $webColor;
+    padding: 3vh 0;
+
+    table{
+        height: 60%;
+        width: 80%;
+        margin: 0 auto 0 auto;
+        text-align: center;
+    }
+}
+
+tbody, td, tfoot, th, thead, tr {
+    border-color: inherit;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.center{
+    text-align: center;
+}
+.left {
+    text-align: left;
+    margin-left: 10%;
+}

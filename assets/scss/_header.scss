@@ -1,0 +1,67 @@
+.header {
+    width: 100%;
+    background-color:$webColor;
+    position: relative;
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 3%;
+
+    nav {
+        ul {
+            li{
+                list-style-type: none;
+                margin: 0 1%;
+                align-items: center;
+                display: inline-block;
+            
+            }
+        }
+    }
+    
+}
+
+.banner {
+    width: 100%;
+}
+
+.navbar {
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+}
+
+.navModificado {
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    background-color: $webColor;
+}
+
+.togglerMod {
+    width: 1rem;
+    height: 1rem;
+}
+
+.navUlMod{
+    width: 80%;
+    justify-content: center;
+}
+
+.navbar-toggler{
+
+        &:focus{
+            text-decoration: none;
+            outline: 0;
+            box-shadow: 0 0 0 0;
+        }
+}
+
+a{
+    &:link, 
+    &:visited, 
+    &:hover, 
+    &:active{
+        color: black;
+        text-decoration: none;
+    }
+    
+}
