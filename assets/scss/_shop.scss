@@ -62,3 +62,23 @@
 .cactus {
     grid-area: cactus;
 }
+
+.shopBtn{
+    position: absolute;
+    padding : 5px;
+    height: 10%;
+    width: 70%;
+    top: 70%;
+    border-radius: 5px;
+    border-width: 0;
+    right: 0;
+    color: rgb(63, 63, 63);
+    font-size: 0.8rem;
+    background-color: $webColor;
+    transform: translateX(101%);
+    visibility: hidden;
+    transition: transform 0.5s, visibility 0.5s;
+    &:hover{
+        color: white;
+    }
+}

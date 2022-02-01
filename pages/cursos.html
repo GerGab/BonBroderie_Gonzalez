@@ -23,34 +23,50 @@
 </head>
 <body>
     <header class="header">
-        <!--Banner de seccion-->
-        <img class="banner" src="../images/Banners/Banner Categoria-CURSOS.jpg" alt="Banner de cursos">
-        <nav class="navbar navbar-expand-lg navbar-light ">
-            <div class="container-fluid navModificado">
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon togglerMod"></span>
+        <nav class="navbar navbar-light headBanner fixed-top ">
+          <div class="navContainer ">
+            <!-- Control Navbar -->
+            <div class="contenedor">
+              <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
               </button>
-              <div class="collapse navbar-collapse navModificado " id="navbarNav">
-                <ul class="navbar-nav navUlMod">
+              <form class="navContainer">
+                <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                <!--<button class="btn " type="submit">Buscar</button>-->
+              </form>
+            </div>
+            <div>
+              <button><i class="fas fa-user"></i></button>
+              <button><i class="fas fa-shopping-bag"></i></button>              
+            </div>
+            <!-- NavBar -->
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+              <div class="offcanvas-header">
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                   <li class="nav-item ">
-                    <a class="nav-link " aria-current="page" href="../index.html">Inicio</a>
+                    <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
                   </li>
                   <li class="nav-item"> 
-                    <a class="nav-link" href="../pages/quienesSomos.html">Quienes Somos</a>
+                    <a class="nav-link" href="./pages/quienesSomos.html">Quienes Somos</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" href="../pages/cursos.html">Cursos</a>
+                    <a class="nav-link" href="./pages/cursos.html">Cursos</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="../pages/shop.html">Shop</a>
+                    <a class="nav-link" href="./pages/shop.html">Shop</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="../pages/tuPedido.html">Armá tu Pedido</a>
+                    <a class="nav-link" href="./pages/tuPedido.html">Armá tu Pedido</a>
                   </li>
                 </ul>
               </div>
             </div>
-          </nav>
+            <!-- Carrito -->
+          </div>
+        </nav>
     </header>
     <section>
         <!-- Tipos de Cursos (falta completar parrafos)-->

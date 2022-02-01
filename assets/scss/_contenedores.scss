@@ -1,8 +1,16 @@
 .contenedor{
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
+}
+
+.navContainer{
+    @extend .contenedor;
+    width: 100%;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .contenedorCentrado{
@@ -25,4 +33,37 @@
     width: 300px;
     overflow-wrap: break-word;
 }
+
+.carritoCont{
+    @extend .navContainer;
+    padding: 10px 0;
+    & p{
+        font-size: 0.8rem;
+        margin: auto;
+        text-align: left;
+        padding: 5px 0;
+    }
+
+    & h3{
+        text-align: left;
+        padding: 5px 0;
+        margin-bottom: 0;
+    }
+
+    &Inc{
+        @extend .navContainer;
+        justify-content: left;
+        & p{
+            width: 30px;
+            margin:0;
+            font-size: 1.2rem; 
+            text-align: center;
+        }
+        & i{
+            padding: 5px;
+        }
+    }
+}
+
+
 

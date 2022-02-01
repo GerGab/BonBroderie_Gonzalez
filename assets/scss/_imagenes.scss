@@ -43,3 +43,32 @@ iframe{
         display:none;
     }
 }
+
+.shopImg {
+    overflow: hidden;
+    position: relative;
+    &:hover{
+
+        & .productImg{
+            opacity: 0.5;
+        }
+        
+
+        & .shopBtn{
+            transform: translateX(0%);
+            visibility: visible;
+
+        }
+    }
+}
+
+.productImg{
+    @extend .miImg;
+    transition: opacity 0.5s;
+
+}
+
+.carritoImg{
+    @include imagenStandard(120px);
+    padding: 0 10px 0 0 ;
+}

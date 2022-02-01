@@ -23,35 +23,51 @@
 </head>
 <body>
     <header class="header">
-        <!--Banner seccion-->
-        <img class="banner" src="../images/Banners/Banner Categoria-ARMA.jpg" alt="Banner arma tu pedido">
-        <nav class="navbar navbar-expand-lg navbar-light ">
-            <div class="container-fluid navModificado">
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon togglerMod"></span>
-              </button>
-              <div class="collapse navbar-collapse navModificado " id="navbarNav">
-                <ul class="navbar-nav navUlMod">
-                  <li class="nav-item ">
-                    <a class="nav-link " aria-current="page" href="../index.html">Inicio</a>
-                  </li>
-                  <li class="nav-item"> 
-                    <a class="nav-link" href="../pages/quienesSomos.html">Quienes Somos</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="../pages/cursos.html">Cursos</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="../pages/shop.html">Shop</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" href="../pages/tuPedido.html">Armá tu Pedido</a>
-                  </li>
-                </ul>
-              </div>
+      <nav class="navbar navbar-light headBanner fixed-top ">
+        <div class="navContainer ">
+          <!-- Control Navbar -->
+          <div class="contenedor">
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <form class="navContainer">
+              <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+              <!--<button class="btn " type="submit">Buscar</button>-->
+            </form>
+          </div>
+          <div>
+            <button><i class="fas fa-user"></i></button>
+            <button><i class="fas fa-shopping-bag"></i></button>              
+          </div>
+          <!-- NavBar -->
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
-          </nav>
-    </header>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item ">
+                  <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+                </li>
+                <li class="nav-item"> 
+                  <a class="nav-link" href="./pages/quienesSomos.html">Quienes Somos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./pages/cursos.html">Cursos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./pages/shop.html">Shop</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./pages/tuPedido.html">Armá tu Pedido</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- Carrito -->
+        </div>
+      </nav>
+  </header>
     <section>
       <div id="carouselExampleControls " class="carousel slide carouselLarge" data-bs-ride="carousel">
         <div class="carousel-inner">
@@ -95,13 +111,7 @@
           <span class="visually-hidden">Next</span>
         </button>
       </div>
-        <!--
-        <div class="container">
-            <img src="../images/tu_pedido/HEADER Arma-Bastidor.jpg" alt="bastidores" class="flexItem bigImage">
-            <img src="../images/tu_pedido/HEADER Arma-Telas.jpg" alt="telas" class="flexItem bigImage">
-            <img src="../images/tu_pedido/HEADER Arma-Colores.jpg" alt="colores" class="flexItem bigImage">
-        </div>-->
-        <form action="/" method="post">
+        <form class="form" action="/" method="post">
             <!--Formulario DATOS y PEDIDO-->
             <fieldset>
                 <h2 class="left">DATOS PERSONALES:</h2>
