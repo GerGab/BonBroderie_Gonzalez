@@ -1,23 +1,9 @@
-const btnCarrito = document.getElementById("carritoBtn");
-const fueraCarritoBtn = document.getElementsByClassName("fueraCarritoBtn");
-const cerrarCarrito = document.getElementById("cerrarCarrito")
-const miCarrito = document.getElementById("carrito");
-const fondo = document.getElementById("fondoCarrito");
-const tableroCarrito = document.getElementById("tablero");
-// adquirir todos los botones de productos.
-const btnsProductos = document.getElementsByClassName("shopBtn");
-// asociar h2 de subtotales.
-const subTotal = document.getElementById("subTotal");
-// detectar los botones de cada producto.
-let btnsSumar = [];
-let btnsRestar = [];
-let btnsEliminar = [];
-
-
+// eventos para mostrar el carrito
 btnCarrito.addEventListener("click", activar);
 fueraCarritoBtn[0].addEventListener("click", desactivar);
-cerrarCarrito.addEventListener("click", desactivar)
+cerrarCarrito.addEventListener("click", desactivar);
 
+// Intenta cargar el usuario si es que matiene la sesión iniciada.
 
 function activar() {
     document.getElementsByTagName("body")[0].style.overflowY = "hidden";
@@ -54,6 +40,7 @@ function renderizar(){
         tableroCarrito.appendChild(contenedor);     
     })
     mi_carrito.ticket();
+    mi_carrito.guardar();
 
     btnsSumar = document.getElementsByClassName("sumarBtn");
     agregar_eventos(btnsSumar);

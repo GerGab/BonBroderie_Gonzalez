@@ -1,5 +1,5 @@
-// asignación de eventos y detección de click.
 
+// asignación de eventos
 for (var i = 0; i < btnsProductos.length; i++) {
     btnsProductos[i].addEventListener("click", function () {
         prod_id = this.id;
@@ -75,7 +75,7 @@ class carrito{
         if (this.items.length != 0){
             let found = false;
             this.items.forEach((_item) => {
-                if (_item[0]==_producto){
+                if (_item[0].id==_producto.id){
                     if (_cantidad<0 || (_producto.stock>_item[1])){
                         _item[1]+=_cantidad;
                         if (_item[1]==0){
@@ -107,12 +107,29 @@ class carrito{
         let total =0;
         this.items.forEach((_item) => {
             total += _item[0].precio * _item[1];
-            subTotal.innerText=`Subtotal: $${total}`;
+        })
+        subTotal.innerText=`Subtotal: $${total}`;
+
+    }
+
+    guardar (){
+        if(_usuario != undefined){
+            //console.log(JSON.stringify(this));
+            localStorage.setItem(_usuario.user,JSON.stringify(this.items));
+        }
+    }
+
+    cargar(){
+        
+        let _items = JSON.parse(localStorage.getItem(_usuario.user));
+        _items.forEach((_item) =>{
+            this.agregar(_item[0],_item[1]);
+            console.log(_item[0].id);
         })
     }
+        
 }
-// agregado de cada producto al array productos
-let productos = []
+
 // Creación de 4 productos usando la clase "producto"
 productos.push(new producto(13001,"HILOS SUMMER",10,10,"../images/Shop/HilosVerano.jpeg"));
 productos.push(new producto(13002,"HILOS WINTER",10,10,"../images/Shop/HilosInvierno.jpg"));
@@ -122,7 +139,3 @@ productos.push(new producto(12001,"TELAS",50,20,"../images/Shop/Telas.jpg"));
 productos.push(new producto(11001,"TIJERAS",200,15,"../images/Shop/Tijera.jpeg"));
 productos.push(new producto(14001,"BASTIDOR BAMBÚ",10,20,"../images/Shop/BastidorBambu.jpeg"));
 productos.push(new producto(15001,"BASTIDOR FLEXI",10,20,"../images/Shop/BastidorFlexi.jpeg"));
-// creación de carrito
-const mi_carrito = new carrito();
-
-

@@ -93,3 +93,13 @@ a{
     }
     
 }
+
+.nombreUsuario{
+    display: flex;
+    align-items: flex-end;
+    
+    & h4{
+        font-size: 0.8rem;
+        margin: 0;
+    }
+}

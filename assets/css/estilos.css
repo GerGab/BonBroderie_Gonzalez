@@ -67,6 +67,13 @@ a:link, a:visited, a:hover, a:active {
   color: black;
   text-decoration: none; }
 
+.nombreUsuario {
+  display: flex;
+  align-items: flex-end; }
+  .nombreUsuario h4 {
+    font-size: 0.8rem;
+    margin: 0; }
+
 h1 {
   margin-top: 3%;
   margin-bottom: 0;
@@ -93,12 +100,11 @@ h2 {
 .resaltar:hover {
   text-decoration: underline; }
 
-.contenedor, .navContainer, .carritoCont, .carritoContInc, .contenedorCentrado, .containerVertical {
+.contenedor, .navContainer, .carritoCont, .carritoContInc, .userContainer, .contenedorCentrado, .containerVertical {
   display: flex;
-  justify-content: center;
-  align-items: flex-start; }
+  justify-content: center; }
 
-.navContainer, .carritoCont, .carritoContInc {
+.navContainer, .carritoCont, .carritoContInc, .userContainer {
   width: 100%;
   flex-wrap: nowrap;
   flex-direction: row;
@@ -140,6 +146,43 @@ h2 {
       text-align: center; }
     .carritoContInc i {
       padding: 5px; }
+
+.userContainer {
+  justify-content: space-around;
+  height: 350px;
+  margin: 50px 0; }
+  .userContainerPanel {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    justify-content: space-between;
+    align-items: left; }
+    .userContainerPanel button {
+      width: 100%;
+      height: 30px;
+      background-color: #e5c5b9;
+      border: none; }
+    .userContainerPanel form {
+      display: flex;
+      flex-direction: column;
+      height: 42%;
+      justify-content: space-around; }
+    .userContainerPanel div {
+      display: flex;
+      flex-direction: row;
+      justify-content: left;
+      align-content: center; }
+      .userContainerPanel div label {
+        display: flex;
+        align-items: center;
+        padding: 0 10px; }
+  .userContainer h2 {
+    text-align: left; }
+  .userContainer h3 {
+    padding: 2%;
+    font-size: 1rem;
+    margin: 0; }
 
 .offcanvas {
   background-color: #e5c5b9; }
@@ -450,6 +493,14 @@ select {
   left: 25vw;
   background-color: gray; }
 
+.verticalLine {
+  margin: 10px;
+  width: 2px;
+  height: 90%;
+  position: relative;
+  top: 2.5%;
+  background-color: gray; }
+
 /*configuracion del footer*/
 .footer {
   text-align: center;
@@ -558,7 +609,7 @@ ol, ul {
   .imgFile {
     width: 200px;
     height: 200px; }
-  .contenedor, .navContainer, .carritoCont, .carritoContInc, .contenedorCentrado, .containerVertical {
+  .contenedor, .navContainer, .carritoCont, .carritoContInc, .userContainer, .contenedorCentrado, .containerVertical {
     flex-direction: column;
     align-content: center; }
   /*Seccion Shop*/

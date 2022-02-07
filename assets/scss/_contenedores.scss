@@ -1,7 +1,6 @@
 .contenedor{
     display: flex;
     justify-content: center;
-    align-items: flex-start;
 }
 
 .navContainer{
@@ -62,6 +61,62 @@
         & i{
             padding: 5px;
         }
+    }
+}
+
+.userContainer{
+    @extend .navContainer;
+    justify-content: space-around;
+    height: 350px;
+    margin: 50px 0;
+
+    &Panel{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+        justify-content: space-between;
+        align-items: left;
+
+        & button {
+            width: 100%;
+            height: 30px;
+            background-color: $webColor;
+            border: none;
+        }
+
+        & form{
+            display: flex;
+            flex-direction: column;
+            height: 42%;
+            justify-content: space-around;
+
+
+        }
+
+        & div{
+            display: flex;
+            flex-direction: row;
+            justify-content: left;
+            align-content: center;
+
+            & label{
+                display: flex;
+                align-items: center;
+                padding: 0 10px;
+            }
+        };
+        
+    }
+
+    & h2{
+        text-align: left;
+    }
+
+    & h3{
+        padding: 2%;
+        font-size: 1rem;
+        margin: 0;
     }
 }
 

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="bordado, costura, personalizar, personalización, curso, insumos, shop"/>
+    <meta name="description" content="Bon Broderie es un micro-emprendimiento destinado a aquellos que desean dar un toque personal a sus pertenencias, enseñamos a bordar con distintos estilos y efectos para que tus prendas y objetos sean únicos!"/>
+    <meta name="author" content="GB webDesign"/>
+    <meta name="copyright" content="BonBroderie"/>
+    <link rel="shortcut icon" href="../images/Favicon.jpeg">
+    <!--Fontawesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <!--Google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital@1&display=swap" rel="stylesheet">
+    <!--Bootstrap CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!--Mi CSS-->
+    <link rel="stylesheet" href="../assets/css/estilos.css">
+    <title>Bon Broderie | Usuario</title>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar navbar-light headBanner fixed-top ">
+          <div class="navContainer ">
+            <!-- Control Navbar -->
+            <div class="contenedor">
+              <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <form class="navContainer">
+                <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                <!--<button class="btn " type="submit">Buscar</button>-->
+              </form>
+            </div>
+            <div>
+              <button id="userBtn"><i class="fas fa-user"></i></button>
+              <button id="carritoBtn"><i class="fas fa-shopping-bag"></i></button>              
+            </div>
+            <!-- NavBar -->
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+              <div class="offcanvas-header">
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                  <li class="nav-item ">
+                    <a class="nav-link " aria-current="page" href="../index.html">Inicio</a>
+                  </li>
+                  <li class="nav-item"> 
+                    <a class="nav-link" href="../pages/quienesSomos.html">Quienes Somos</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="../pages/cursos.html">Cursos</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="../pages/shop.html">Shop</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="../pages/tuPedido.html">Armá tu Pedido</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- Carrito -->
+            <div class="fueraCarrito" id="fondoCarrito">
+              <button class="fueraCarritoBtn"></button>
+            </div>
+            <div class="miCarrito" id="carrito">
+              <div class="offcanvas-header">
+                <button type="button" class="btn-close text-reset" id="cerrarCarrito"></button>
+              </div>
+              <h2>Tu Carrito</h2>
+              <div class="divisor"></div>
+              <div id="tablero">
+                <!--Espacio a completar con elementos del carrito-->
+              </div>
+              <h2 id="subTotal"></h2>
+              <button>Comprar</button>
+            </div>
+          </div>
+        </nav>
+    </header>
+    <section>
+        <div class="userContainer">
+            <div class="userContainerPanel">
+                <h2>Ya tengo cuenta</h2>
+                <form action="/" method="post" id="ingresar">
+                    <label for="email">E-mail</label>
+                    <input class="email" id="email" type="text">
+                    <label for="password">Contraseña</label>
+                    <input class="password" id="password" type="text" >                
+                </form>
+                <a href="">Olvide mi contraseña </a>
+                <div>
+                    <input type="radio" name="no_bot" id="no_bot" > 
+                <label for="no_bot">No soy un robot.</label>
+                </div>
+                <button id="loginBtn">INICIAR SESIÓN</button>
+            </div>
+            <!--Divisor vertical-->
+            <div class="verticalLine"></div>
+            <div class="userContainerPanel">
+                <h2>¿No tenes cuenta?</h2>
+                <h3>Simple y rapido.</h3>
+                <h3>Comprá mas facil.</h3>
+                <h3>Guardá información de envio.</h3>
+                <h3>Seguimiento de tu pedido.</h3>
+                <button id="newBtn">Crear una cuenta.</button>
+            </div>
+            
+        </div>
+        <div class="line"></div>    
+    </section>
+    <footer class="footer">
+        <p>TODOS LOS DERECHOS RESERVADOS</p>
+        <div>
+            <h3>BON BRODERIE</h3>
+            <ul>
+                <!--Links mas importantes-->
+                <li> <a href="../pages/quienesSomos.html">QUIENES SOMOS</a> </li>
+                <li> <a href="../pages/cursos.html">CURSOS</a> </li>
+                <li> <a href="../pages/tuPedido.html">ARMÁ TU PEDIDO</a> </li>
+            </ul>
+        </div>
+        <div>
+            <h3>REDES SOCIALES</h3>
+            <ul>
+                <!--A incorporar link mas adelante-->
+                <li><a href="https://www.instagram.com/bon.broderie/"> 
+                        <i class="fab fa-instagram"></i> INSTAGRAM</a></li>
+                <li><a href="https://www.youtube.com/channel/UC_wtsz-dV-uBTkiTQd0la-w/featured"><i class="fab fa-youtube"></i> YOUTUBE</li>
+                <li><i class="fab fa-whatsapp"></i> WHATSAPP</li></a> 
+            </ul>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="../JS/mostrarCarrito.js"></script>
+    <script src="../JS/producto.js"></script>
+    <script src="../JS/usuario.js"></script>
+</body>
+</html>
