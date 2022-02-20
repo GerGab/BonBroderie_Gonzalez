@@ -40,7 +40,7 @@ function renderizar(){
         tableroCarrito.appendChild(contenedor);     
     })
     mi_carrito.ticket();
-    mi_carrito.guardar();
+    mi_carrito.guardar(_usuario);
 
     let btnsSumar = document.getElementsByClassName("sumarBtn");
     agregar_eventos(btnsSumar);

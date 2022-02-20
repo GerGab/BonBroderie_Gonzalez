@@ -25,66 +25,67 @@
 </head>
 <body>   
     <header class="header">
-        <nav class="navbar navbar-light headBanner">
-          <div class="navContainer ">
-            <!-- Control Navbar -->
-            <div class="contenedor">
-              <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <form class="navContainer">
-                <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-                <!--<button class="btn " type="submit">Buscar</button>-->
-              </form>
+      <nav class="navbar navbar-light headBanner fixed-top ">
+        <div class="navContainer ">
+          <!-- Control Navbar -->
+          <div class="contenedor">
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <form class="navContainer">
+              <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+              <!--<button class="btn " type="submit">Buscar</button>-->
+            </form>
+          </div>
+          <div class="contenedor">
+            <div class="nombreUsuario"><h4></h4></div>
+            <button id="userBtn" onclick="window.location.href='../pages/Usuario.html'"><i class="fas fa-user"></i></button>
+            <button id="carritoBtn"><i class="fas fa-shopping-bag"></i></button>              
+          </div>
+          <!-- NavBar -->
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
-            <div>
-              <button id="userBtn"><i class="fas fa-user"></i></button>
-              <button id="carritoBtn"><i class="fas fa-shopping-bag"></i></button>              
-            </div>
-            <!-- NavBar -->
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-              <div class="offcanvas-header">
-                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-              </div>
-              <div class="offcanvas-body">
-                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                  <li class="nav-item ">
-                    <a class="nav-link " aria-current="page" href="../index.html">Inicio</a>
-                  </li>
-                  <li class="nav-item"> 
-                    <a class="nav-link" href="../pages/quienesSomos.html">Quienes Somos</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="../pages/cursos.html">Cursos</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" href="../pages/shop.html">Shop</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="../pages/tuPedido.html">Armá tu Pedido</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <!-- Carrito -->
-            <div class="fueraCarrito" id="fondoCarrito">
-              <button class="fueraCarritoBtn"></button>
-            </div>
-            <div class="miCarrito" id="carrito">
-              <div class="offcanvas-header">
-                <button type="button" class="btn-close text-reset" id="cerrarCarrito"></button>
-              </div>
-              <h2>Tu Carrito</h2>
-              <div class="divisor"></div>
-              <div id="tablero">
-                <!--Espacio a completar con elementos del carrito-->
-              </div>
-              <h2 id="subTotal"></h2>
-              <button>Comprar</button>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item ">
+                  <a class="nav-link " aria-current="page" href="../index.html">Inicio</a>
+                </li>
+                <li class="nav-item"> 
+                  <a class="nav-link" href="../pages/quienesSomos.html">Quienes Somos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../pages/cursos.html">Cursos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="../pages/shop.html">Shop</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../pages/tuPedido.html">Armá tu Pedido</a>
+                </li>
+              </ul>
             </div>
           </div>
-        </nav>
-    </header>
+          <!-- Carrito -->
+          <div class="fueraCarrito" id="fondoCarrito">
+            <button class="fueraCarritoBtn"></button>
+          </div>
+          <div class="miCarrito" id="carrito">
+            <div class="offcanvas-header">
+              <button type="button" class="btn-close text-reset" id="cerrarCarrito"></button>
+            </div>
+            <h2>Tu Carrito</h2>
+            <div class="divisor"></div>
+            <div id="tablero">
+              <!--Espacio a completar con elementos del carrito-->
+            </div>
+            <h2 id="subTotal"></h2>
+            <button id="btnComprar">Comprar</button>
+          </div>
+        </div>
+      </nav>
+  </header>
     <div class="usarioCont" id="formUsario">
       <div class="usuarioBack"></div>
       <div class="formUsuario">
@@ -168,6 +169,7 @@
     <script src="../JS/Variables.js"></script>
     <script src="../JS/mostrarCarrito.js"></script>
     <script src="../JS/producto.js"></script>
+    <script src="../JS/carrito.js"></script>
     <script src="../JS/usuario.js"></script>
     <script src="../JS/app.js"></script>
 </body>

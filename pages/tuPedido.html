@@ -23,7 +23,7 @@
 </head>
 <body>
   <header class="header">
-    <nav class="navbar navbar-light headBanner">
+    <nav class="navbar navbar-light headBanner fixed-top ">
       <div class="navContainer ">
         <!-- Control Navbar -->
         <div class="contenedor">
@@ -35,8 +35,9 @@
             <!--<button class="btn " type="submit">Buscar</button>-->
           </form>
         </div>
-        <div>
-          <button id="userBtn"><i class="fas fa-user"></i></button>
+        <div class="contenedor">
+          <div class="nombreUsuario"><h4></h4></div>
+          <button id="userBtn" onclick="window.location.href='../pages/Usuario.html'"><i class="fas fa-user"></i></button>
           <button id="carritoBtn"><i class="fas fa-shopping-bag"></i></button>              
         </div>
         <!-- NavBar -->
@@ -56,7 +57,7 @@
                 <a class="nav-link" href="../pages/cursos.html">Cursos</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../pages/shop.html">Shop</a>
+                <a class="nav-link " href="../pages/shop.html">Shop</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link active" href="../pages/tuPedido.html">Armá tu Pedido</a>
@@ -215,6 +216,7 @@
     <script src="../JS/Variables.js"></script>
     <script src="../JS/mostrarCarrito.js"></script>
     <script src="../JS/producto.js"></script>
+    <script src="../JS/carrito.js"></script>
     <script src="../JS/usuario.js"></script>
     <script src="../JS/app.js"></script>
 </body>

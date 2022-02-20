@@ -15,6 +15,8 @@ const subTotal = document.getElementById("subTotal");
 let btnsSumar = [];
 let btnsRestar = [];
 let btnsEliminar = [];
+//boton de comprar carrito
+let btnComprar = document.getElementById("btnComprar");
 // variable carrito
 let mi_carrito;
 // lista de productos

@@ -5,20 +5,80 @@ fetch('../JS/productos.json').then((res)=>res.json()).then((_data) => {
         
     })
 });
-//iniciliza el usuario y recupera (si existe) el carrito crea uno.
-try{
-    
-    _usuario = JSON.parse(sessionStorage.getItem("usuario"));
-    alias[0].children[0].innerText="Hola "+ _usuario.user;
-    mi_carrito = new carrito();
-    if (_usuario != undefined){
-        console.log(JSON.parse(localStorage.getItem(_usuario.user)));
-       mi_carrito.cargar();
-    }
-    
+//iniciliza el usuario y recupera (si existe) el carrito o crea uno.
 
-} catch (error) {
-   mi_carrito = new carrito();
+_usuario = JSON?.parse(sessionStorage.getItem("usuario"))|| usuarios[0];
+let {user} = _usuario;
+(user!="invitado") &&
+    (alias[0].children[0].innerText="Hola "+ user);
+    mi_carrito = new carrito();
+try{
+    mi_carrito = new carrito();
+    mi_carrito.cargar();
+}
+catch{
+    mi_carrito = new carrito();
+}
+
+/*------------------------------------------------------
+Sección destinada a la funcionalidad del carrito
+-------------------------------------------------------*/
+// asignación de eventos a btns de producto
+for (let i = 0; i < btnsProductos.length; i++) {
+    btnsProductos[i].addEventListener("click", function () {
+        let prod_id = this.id;
+        productos.forEach(function(_producto) {
+            if (_producto.id == prod_id){
+                mi_carrito.agregar(_producto,1);
+                activar();
+            }
+        });
+    });
+}
+
+// asignación de eventos a botones de carrito
+function agregar_eventos (btn_array){
+    for (let i = 0; i < btn_array.length; i++) {
+        btn_array[i].addEventListener("click", function () {
+            let prod_id = this.getAttribute('data-id');
+            let accion = this.getAttribute('class');
+            productos.forEach(function(_producto) {
+                if (_producto.id == prod_id){
+                    switch (accion){
+                        case "sumarBtn":
+                                mi_carrito.agregar(_producto,1);
+                                activar();
+                            break;
+                        
+                        case "restarBtn":
+                                mi_carrito.agregar(_producto,-1);
+                                activar();
+                        break;
+
+                        case "eliminarBtn":
+                                mi_carrito.quitar(_producto);
+                                activar();
+                            break;
+                        
+                    }
+                    
+                }
+            });
+        });
+    }  
+}
+btnComprar.addEventListener("click",()=>{
+    let{user} = _usuario;
+    (user=="invitado") ? login_usuario() : comprar(); 
+});
+function login_usuario(){
+    swal("Por favor inicia sesión o crea una cuenta para continuar")
+    .then((value) =>{
+        window.location.href='../pages/Usuario.html';
+    });
+}
+function comprar(){
+
 }
 
 /*------------------------------------------------------
@@ -48,7 +108,7 @@ n_user_form?.addEventListener("submit",(e)=>{
 
 function crear_usuario(){
     // verificar que todos los datos son correctos
-    let {_errores, _usuario} = validarFormulario();
+    let {_errores, n_usuario} = validarFormulario();
     // si errores
     if (_errores.length>0){
         _errores.forEach(_error=>{
@@ -58,9 +118,8 @@ function crear_usuario(){
     // si correctos..
     else{
         // crear nuevo usuario
-        usuarios.push(new usuario(..._usuario));
+        usuarios.push(new usuario(...n_usuario));
         // Continuar con dar aviso y regresar al shop.
-        console.log(usuarios);
         swal("Te hemos enviado un correo para verificar tu cuenta")
         .then((value) => {
             swal({
@@ -72,6 +131,7 @@ function crear_usuario(){
             .then((value) => {
                 // loggear nuevo usuario
                 let {email,pass} = usuarios[usuarios.length-1];
+                _usuario.user=="invitado" && mi_carrito.guardar(usuarios[usuarios.length-1]);
                 loggear(email,pass);
             }); 
         }); 
@@ -120,21 +180,21 @@ function loggear(_email,_password){
 }
 // funcion para validar el formulario de nuevo usuario
 function validarFormulario(){
-    let _usuario = [];
+    let n_usuario = [];
     let _errores = [];
     usuarios.forEach(({user,email}) =>{
         new_usuario.value.toLowerCase() == user && _errores.push("Este usuario ya esta en uso");
         new_email.value == email && _errores.push("Ya existe una cuenta con este email.");
     });
     if (_errores.length==0){
-        _usuario.push(new_usuario.value.toLowerCase());
-        _usuario.push(new_password.value);
-        _usuario.push(new_email.value);
-        _usuario.push(new_nombre.value);
-        _usuario.push(new_apellido.value);
-        _usuario.push(new_telefono.value);
-        _usuario.push(new_DNI.value);
-        _usuario.push(new_direccion.value);
+        n_usuario.push(new_usuario.value.toLowerCase());
+        n_usuario.push(new_password.value);
+        n_usuario.push(new_email.value);
+        n_usuario.push(new_nombre.value);
+        n_usuario.push(new_apellido.value);
+        n_usuario.push(new_telefono.value);
+        n_usuario.push(new_DNI.value);
+        n_usuario.push(new_direccion.value);
     }
-    return {_errores, _usuario};
+    return {_errores, n_usuario};
 }
