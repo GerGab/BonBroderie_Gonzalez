@@ -194,6 +194,9 @@ h2 {
   width: 300px;
   transform: translateX(-100%); }
 
+.carousel {
+  z-index: -10; }
+
 .miCarrito, .miCarritoAbierto {
   position: fixed;
   right: 0px;
@@ -201,7 +204,7 @@ h2 {
   height: 100vh;
   padding: 0 10px;
   background-color: #e5c5b9;
-  z-index: 2;
+  z-index: 4;
   overflow-y: scroll;
   visibility: visible;
   transform: translate(100%);
@@ -217,7 +220,7 @@ h2 {
   position: fixed;
   height: 100vh;
   width: 100vw;
-  z-index: 1;
+  z-index: 3;
   background-color: white;
   opacity: 0;
   visibility: hidden;
@@ -453,8 +456,7 @@ fieldset {
   background-color: #e5c5b9;
   border: none;
   margin: 3% 0;
-  padding: 0 0 2% 0;
-  position: relative; }
+  padding: 0 0 2% 0; }
 
 .contactoGrid {
   width: 60%;
@@ -553,7 +555,8 @@ select {
   height: 2px;
   position: relative;
   left: 25vw;
-  background-color: gray; }
+  background-color: gray;
+  z-index: -1; }
 
 .verticalLine {
   margin: 10px;
@@ -561,7 +564,8 @@ select {
   height: 90%;
   position: relative;
   top: 2.5%;
-  background-color: gray; }
+  background-color: gray;
+  z-index: -1; }
 
 /*configuracion del footer*/
 .footer {
@@ -578,7 +582,6 @@ select {
     width: 200px;
     display: inline-block;
     margin: 5% 10%;
-    position: relative;
     text-align: left; }
     .footer div ul li {
       list-style-type: none;

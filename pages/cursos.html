@@ -22,52 +22,67 @@
     <title>Bon Broderie | Cursos</title>
 </head>
 <body>
-    <header class="header">
-        <nav class="navbar navbar-light headBanner fixed-top ">
-          <div class="navContainer ">
-            <!-- Control Navbar -->
-            <div class="contenedor">
-              <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <form class="navContainer">
-                <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-                <!--<button class="btn " type="submit">Buscar</button>-->
-              </form>
-            </div>
-            <div>
-              <button><i class="fas fa-user"></i></button>
-              <button><i class="fas fa-shopping-bag"></i></button>              
-            </div>
-            <!-- NavBar -->
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-              <div class="offcanvas-header">
-                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-              </div>
-              <div class="offcanvas-body">
-                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                  <li class="nav-item ">
-                    <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
-                  </li>
-                  <li class="nav-item"> 
-                    <a class="nav-link" href="./pages/quienesSomos.html">Quienes Somos</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="./pages/cursos.html">Cursos</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="./pages/shop.html">Shop</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="./pages/tuPedido.html">Armá tu Pedido</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <!-- Carrito -->
+  <header class="header">
+    <nav class="navbar navbar-light headBanner">
+      <div class="navContainer ">
+        <!-- Control Navbar -->
+        <div class="contenedor">
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <form class="navContainer">
+            <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+            <!--<button class="btn " type="submit">Buscar</button>-->
+          </form>
+        </div>
+        <div>
+          <button id="userBtn"><i class="fas fa-user"></i></button>
+          <button id="carritoBtn"><i class="fas fa-shopping-bag"></i></button>              
+        </div>
+        <!-- NavBar -->
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
-        </nav>
-    </header>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item ">
+                <a class="nav-link " aria-current="page" href="../index.html">Inicio</a>
+              </li>
+              <li class="nav-item"> 
+                <a class="nav-link" href="../pages/quienesSomos.html">Quienes Somos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="../pages/cursos.html">Cursos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../pages/shop.html">Shop</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../pages/tuPedido.html">Armá tu Pedido</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Carrito -->
+        <div class="fueraCarrito" id="fondoCarrito">
+          <button class="fueraCarritoBtn"></button>
+        </div>
+        <div class="miCarrito" id="carrito">
+          <div class="offcanvas-header">
+            <button type="button" class="btn-close text-reset" id="cerrarCarrito"></button>
+          </div>
+          <h2>Tu Carrito</h2>
+          <div class="divisor"></div>
+          <div id="tablero">
+            <!--Espacio a completar con elementos del carrito-->
+          </div>
+          <h2 id="subTotal"></h2>
+          <button>Comprar</button>
+        </div>
+      </div>
+    </nav>
+</header>
     <section>
         <!-- Tipos de Cursos (falta completar parrafos)-->
         <div class="contenedor">
@@ -177,5 +192,12 @@
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="../JS/Variables.js"></script>
+    <script src="../JS/mostrarCarrito.js"></script>
+    <script src="../JS/producto.js"></script>
+    <script src="../JS/usuario.js"></script>
+    <script src="../JS/app.js"></script>
 </body>
 </html>

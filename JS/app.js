@@ -102,7 +102,7 @@ function loggear(_email,_password){
                     }
                   }).showToast();
                   setTimeout(() => {
-                    window.location.href='../pages/Shop.html';
+                    window.location.href='../pages/shop.html';
                   }, 1500);
             }
                 

@@ -6,6 +6,7 @@
     position: relative;
     left: 25vw;
     background-color: gray;
+    z-index: -1;
 }
 
 .verticalLine{
@@ -15,6 +16,7 @@
     position: relative;
     top:2.5%;
     background-color: gray; 
+    z-index: -1;
 }
 
 /*configuracion del footer*/
@@ -35,7 +37,6 @@
         width: 200px;
         display: inline-block;
         margin: 5% 10%;
-        position: relative;
         text-align: left;
 
         ul li{

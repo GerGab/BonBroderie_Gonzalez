@@ -6,7 +6,7 @@
     height: 100vh;
     padding: 0 10px;
     background-color: $webColor;
-    z-index: 2;
+    z-index: 4;
     overflow-y: scroll;
     visibility: visible;
     transform: translate(100%);
@@ -26,7 +26,7 @@
     position: fixed;
     height: 100vh;
     width: 100vw;
-    z-index: 1;
+    z-index: 3;
     background-color: white;
     opacity: 0;
     visibility: hidden;
