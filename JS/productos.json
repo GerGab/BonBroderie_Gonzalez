@@ -1,0 +1,10 @@
+[
+    {"id":13001,"nombre":"HILOS SUMMER","precio":10,"stock":10,"image":"../images/Shop/HilosVerano.jpeg"},
+    {"id":13002,"nombre":"HILOS WINTER","precio":10,"stock":10,"image":"../images/Shop/HilosInvierno.jpg"},
+    {"id":13003,"nombre":"HILOS SPRING","precio":10,"stock":10,"image":"../images/Shop/HilosPrimavera.jpeg"},
+    {"id":13004,"nombre":"HILOS AUTUMN","precio":10,"stock":10,"image":"../images/Shop/HilosOtoño.jpeg"},
+    {"id":12001,"nombre":"TELAS","precio":50,"stock":20,"image":"../images/Shop/Telas.jpg"},
+    {"id":11001,"nombre":"TIJERAS","precio":200,"stock":15,"image":"../images/Shop/Tijera.jpeg"},
+    {"id":14001,"nombre":"BASTIDOR BAMBÚ","precio":10,"stock":20,"image":"../images/Shop/BastidorBambu.jpeg"},
+    {"id":15001,"nombre":"BASTIDOR FLEXI","precio":10,"stock":20,"image":"../images/Shop/BastidorFlexi.jpeg"}
+]

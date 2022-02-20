@@ -1,0 +1,78 @@
+
+.usarioCont{
+    
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    z-index: 1;
+    visibility: hidden;
+   
+    transition: visibility 0.3s;
+    &Activo{
+        visibility: visible;
+    }
+
+}
+
+.formUsuario{
+
+    background-color: $webColor;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+
+    position: fixed;
+    z-index: 2;
+    left: 25%;
+    width: 50%;
+    top: 10%;
+    height: 80%;
+
+    &Int{
+       
+        padding-top: 5%;
+        padding-left: 5%;
+        height: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: left;
+    }
+
+    & form{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-start;
+        
+        & input{
+            margin: 2% 2%;
+            width: 70%;
+            padding-left: 5px;
+        }
+    }
+
+.submit{
+    border: none;
+    background-color: transparent;
+    align-self: center;
+    width: 100%;
+}
+
+}
+
+.usuarioBack{
+    background-color: white;
+    opacity: 0.6;
+    z-index: 2;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+.swal-button{
+    background-color: $webColor;
+    &--confirm{
+        background-color: $webColor;
+    }
+}

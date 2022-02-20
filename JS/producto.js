@@ -1,8 +1,8 @@
 
-// asignación de eventos
-for (var i = 0; i < btnsProductos.length; i++) {
+// asignación de eventos a btns de producto
+for (let i = 0; i < btnsProductos.length; i++) {
     btnsProductos[i].addEventListener("click", function () {
-        prod_id = this.id;
+        let prod_id = this.id;
         productos.forEach(function(_producto) {
             if (_producto.id == prod_id){
                 mi_carrito.agregar(_producto,1);
@@ -12,11 +12,12 @@ for (var i = 0; i < btnsProductos.length; i++) {
     });
 }
 
+// asignación de eventos a botones de carrito
 function agregar_eventos (btn_array){
-    for (var i = 0; i < btn_array.length; i++) {
+    for (let i = 0; i < btn_array.length; i++) {
         btn_array[i].addEventListener("click", function () {
-            prod_id = this.getAttribute('data-id');
-            accion = this.getAttribute('class');
+            let prod_id = this.getAttribute('data-id');
+            let accion = this.getAttribute('class');
             productos.forEach(function(_producto) {
                 if (_producto.id == prod_id){
                     switch (accion){
@@ -43,8 +44,6 @@ function agregar_eventos (btn_array){
     }  
 }
 
-
-
 // modelo de clase a implementar para los productos
 class producto{
     constructor(_id,_nombre,_precio,_stock_inicial,_scr_image){
@@ -56,12 +55,12 @@ class producto{
     }
 
     reponer_stock(_cantidad){                                           // función a ser utilizada por el administrador para completar stock
-        this.stock = this.stock + _cantidad;
+        this.stock += _cantidad;
     }
 
     retirar_stock(_cantidad){                                           //  función para descontar el producto del stock
-        if (_cantidad <= this.stock) {this.stock = this.stock - _cantidad; return true}
-        else{alert("La cantidad introducida es mayor que el stock actual."); return false}
+        return _cantidad <= this.stock ? this.stock = this.stock - _cantidad : alert("La cantidad introducida es mayor que el stock actual.");
+
     }
 }
 // modelo de clas de carrito para llevar control de los productos seleccionados.
@@ -78,9 +77,7 @@ class carrito{
                 if (_item[0].id==_producto.id){
                     if (_cantidad<0 || (_producto.stock>_item[1])){
                         _item[1]+=_cantidad;
-                        if (_item[1]==0){
-                            this.quitar(_item[0]);
-                        }
+                        _item[1]==0 && this.quitar(_item[0]);   
                     }
                     found = true;
                 }
@@ -97,7 +94,7 @@ class carrito{
 
     quitar (_producto){
         this.items.forEach((_item) => {
-            if (_item[0]==_producto){
+            if (_item[0].id==_producto.id){
                     this.items.splice(this.items.indexOf(_item), 1);
                 }                  
         })
@@ -113,10 +110,7 @@ class carrito{
     }
 
     guardar (){
-        if(_usuario != undefined){
-            //console.log(JSON.stringify(this));
-            localStorage.setItem(_usuario.user,JSON.stringify(this.items));
-        }
+        _usuario && localStorage.setItem(_usuario.user,JSON.stringify(this.items));
     }
 
     cargar(){
@@ -129,7 +123,7 @@ class carrito{
     }
         
 }
-
+/*
 // Creación de 4 productos usando la clase "producto"
 productos.push(new producto(13001,"HILOS SUMMER",10,10,"../images/Shop/HilosVerano.jpeg"));
 productos.push(new producto(13002,"HILOS WINTER",10,10,"../images/Shop/HilosInvierno.jpg"));
@@ -139,3 +133,4 @@ productos.push(new producto(12001,"TELAS",50,20,"../images/Shop/Telas.jpg"));
 productos.push(new producto(11001,"TIJERAS",200,15,"../images/Shop/Tijera.jpeg"));
 productos.push(new producto(14001,"BASTIDOR BAMBÚ",10,20,"../images/Shop/BastidorBambu.jpeg"));
 productos.push(new producto(15001,"BASTIDOR FLEXI",10,20,"../images/Shop/BastidorFlexi.jpeg"));
+*/

@@ -42,14 +42,12 @@ function renderizar(){
     mi_carrito.ticket();
     mi_carrito.guardar();
 
-    btnsSumar = document.getElementsByClassName("sumarBtn");
+    let btnsSumar = document.getElementsByClassName("sumarBtn");
     agregar_eventos(btnsSumar);
-    btnsRestar = document.getElementsByClassName("restarBtn");
+    let btnsRestar = document.getElementsByClassName("restarBtn");
     agregar_eventos(btnsRestar);
-    btnsEliminar = document.getElementsByClassName("eliminarBtn");
+    let btnsEliminar = document.getElementsByClassName("eliminarBtn");
     agregar_eventos(btnsEliminar);
-
-
 }
 
 

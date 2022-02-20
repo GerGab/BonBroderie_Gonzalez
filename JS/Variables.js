@@ -21,3 +21,23 @@ let mi_carrito;
 let productos = [];
 // usuario activo
 let _usuario;
+// variables de login usuario
+const formulario = document.getElementById("ingresar");
+const no_bot = document.getElementById("no_bot");
+const login_btn = document.getElementById("loginBtn");
+const new_btn = document.getElementById("newBtn");
+const new_user = document.getElementById("formUsario");
+const close_form = document.getElementById("closeUserForm");
+/*---------------------------
+Variables del formulario nuevo usuario
+------------------------------*/
+const n_user_form = document.getElementById("nuevoUsuarioForm");
+const new_usuario = document.getElementById("user");
+const new_password = document.getElementById("password");
+const new_email = document.getElementById("email");
+const new_nombre = document.getElementById("nombre");
+const new_apellido = document.getElementById("apellido");
+const new_telefono = document.getElementById("telefono");
+const new_DNI = document.getElementById("DNI");
+const new_direccion = document.getElementById("direccion");
+
