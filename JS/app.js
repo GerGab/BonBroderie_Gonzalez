@@ -5,11 +5,6 @@ fetch('../JS/productos.json').then((res)=>res.json()).then((_data) => {
         
     })
 });
-
-console.log(productos);
-
-
-
 //iniciliza el usuario y recupera (si existe) el carrito crea uno.
 try{
     
@@ -100,8 +95,8 @@ function loggear(_email,_password){
                 Toastify({
                     text: `Bienvenido/a ${_usuario.user}`,
                     duration: 1000,
-                    gravity: "top", // `top` or `bottom`
-                    position: "center", // `left`, `center` or `right`
+                    gravity: "top",
+                    position: "center",
                     style: {
                       background: "rgb(229, 197, 185)",
                     }
