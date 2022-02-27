@@ -13,7 +13,8 @@ class producto{
     }
 
     retirar_stock(_cantidad){                                           //  función para descontar el producto del stock
-        return _cantidad <= this.stock ? this.stock = this.stock - _cantidad : alert("La cantidad introducida es mayor que el stock actual.");
-
+        console.log(_cantidad);
+        this.stock -= _cantidad;
+        console.log(this.stock);
     }
 }

@@ -239,6 +239,14 @@ h2 {
   margin-top: 10px;
   padding-bottom: 10px; }
 
+#btnComprar {
+  margin: 12px 0 25px 0;
+  font-size: 26px;
+  height: 40px;
+  width: 80%; }
+  #btnComprar:hover {
+    color: white; }
+
 .usarioCont {
   position: fixed;
   height: 100vh;

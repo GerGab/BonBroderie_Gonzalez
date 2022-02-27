@@ -42,4 +42,10 @@ const new_apellido = document.getElementById("apellido");
 const new_telefono = document.getElementById("telefono");
 const new_DNI = document.getElementById("DNI");
 const new_direccion = document.getElementById("direccion");
-
+/*--------------------------------
+Variables para ajuste de stock y estado de compras
+---------------------------------*/
+let flag=JSON?.parse(localStorage.getItem("flag"))||false;
+const base_URL = "https://api.mercadolibre.com/checkout/preferences?";
+/*Esta prohibido publicar la secret_key en el frontend, pero como es solo una cuenta de prueba y para no tener que implementar backend lo hice de este modo(tambien podria haberlo pedido por fetch a un archivo.json secret y sumarlo en el gitignore)*/ 
+const access_token = "APP_USR-1878676420841965-022608-0c85fe9fb9e650a57764f40877726e98-1080837191";

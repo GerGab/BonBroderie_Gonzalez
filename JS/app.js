@@ -1,10 +1,22 @@
+/*---------------------------
+Creación de productos y stock
+-----------------------------*/
 // fetch de archivos json
-fetch('../JS/productos.json').then((res)=>res.json()).then((_data) => {
-    _data.forEach(({id,nombre,precio,stock,image})=>{
+let productos_n = JSON?.parse(localStorage.getItem("productos")) || [];         // intenta cargar el stock desde el localStorage (a falta de backend)
+if (productos_n.length==0){                                                    // si productos esta vacio carga el archivo json de la carpeta
+    fetch('../JS/productos.json').then((res)=>res.json()).then((_data) => {
+        _data.forEach(({id,nombre,precio,stock,image})=>{
+            productos.push(new producto(id,nombre,precio,stock,image));
+            });
+    });
+    localStorage.setItem("productos",JSON.stringify(productos));            // carga el stock en el localStorage
+}else{
+    productos_n.forEach(({id,nombre,precio,stock,image}) =>{
         productos.push(new producto(id,nombre,precio,stock,image));
-        
     })
-});
+}
+console.log(productos);
+
 //iniciliza el usuario y recupera (si existe) el carrito o crea uno.
 
 _usuario = JSON?.parse(sessionStorage.getItem("usuario"))|| usuarios[0];
@@ -19,6 +31,52 @@ try{
 catch{
     mi_carrito = new carrito();
 }
+/*--------------------------------------------------
+Resolución de la compra
+----------------------------------------*/
+function estado_flag(_bool){
+    flag = _bool;
+    localStorage.setItem("flag",JSON.stringify(flag));
+}
+// deteccion de pago
+(window.location.href.search("status=approved")!=-1 & flag) && concretarCompra();
+(window.location.href.search("status=in_process")!=-1 & flag) && esperaConfirmacion();
+(window.location.href.search("status=rejected")!=-1 & flag) && cancelacion();
+function concretarCompra (){
+    estado_flag(false);
+    console.log("cerrar");
+    swal({
+        title: "Gracias por tu compra!",
+        text: "Esperamos que vuelvas pronto!",
+        icon: "success",
+        button: "Continuar",
+        })
+    .then((value) => {
+        // vaciar el carrito
+        mi_carrito.cerrarCompra();
+        // guardar el ajuste del stock
+        localStorage.setItem("productos",JSON.stringify(productos));  
+    }); 
+
+}
+function esperaConfirmacion(){
+    estado_flag(false);
+    swal({
+        title: "Gracias por tu compra!",
+        text: "El pago se esta procesando, pronto nos pondremos en contacto contigo",
+        icon: "info",
+        button: "Continuar",
+        })
+}
+function cancelacion(){
+    estado_flag(false);
+    swal({
+        title: "Parece que algo salio mal",
+        text: "Por favor intenta realizar el pago nuevamente",
+        icon: "error",
+        button: "Continuar",
+        })
+}
 
 /*------------------------------------------------------
 Sección destinada a la funcionalidad del carrito
@@ -29,8 +87,18 @@ for (let i = 0; i < btnsProductos.length; i++) {
         let prod_id = this.id;
         productos.forEach(function(_producto) {
             if (_producto.id == prod_id){
-                mi_carrito.agregar(_producto,1);
-                activar();
+                if (_producto.stock>0){
+                    mi_carrito.agregar(_producto,1);
+                    activar();
+                }
+                else{
+                    swal({
+                        title: "Te pedimos disculpas!",
+                        text: "en este momento no hay stock de este producto",
+                        icon: "info",
+                        button: "Continuar",
+                        })
+                }
             }
         });
     });
@@ -68,8 +136,12 @@ function agregar_eventos (btn_array){
     }  
 }
 btnComprar.addEventListener("click",()=>{
-    let{user} = _usuario;
-    (user=="invitado") ? login_usuario() : comprar(); 
+    if (mi_carrito.items.length!=0){
+        let{user} = _usuario;
+        (user=="invitado") ? login_usuario() : comprar(mi_carrito);
+    }else{
+        console.log("carrito vacio");
+    }
 });
 function login_usuario(){
     swal("Por favor inicia sesión o crea una cuenta para continuar")
@@ -77,8 +149,36 @@ function login_usuario(){
         window.location.href='../pages/Usuario.html';
     });
 }
-function comprar(){
-
+async function comprar({total}){
+    
+    estado_flag(true);
+    let preference = {
+		items: [
+			{
+				"title": "Mi Carrito",
+				"unit_price": total,
+				"quantity": 1,
+                "picture_url": "../images/HilosPrimavera.jpeg"
+               
+			},
+		],
+		back_urls: { // Los URL se devuelven de esta manera dinámica por no conocer a ciencia cierta cual será el host, con backend se establecería la ruta exacta deseada.
+			"success": window.location.href.replace(window.location.search,""),
+			"failure": window.location.href.replace(window.location.search,""),
+			"pending": window.location.href.replace(window.location.search,"")
+		},
+		auto_return: "approved",
+        external_reference: "bonbroderie123456",
+	};
+    const resp = await fetch(`${base_URL}access_token=${access_token}`,
+    {
+        method : 'POST',
+        body : JSON.stringify(preference),
+        header: "Content-Type: application/json"
+    }).catch((err) =>{console.log(err)})
+    const {sandbox_init_point:link} = await resp.json();
+    window.location.href = link;
+    
 }
 
 /*------------------------------------------------------

@@ -2,35 +2,33 @@ Proyecto: BonBroderie - Shop Online
 
 Descripción: Este proyecto comenzó en el curso anterior de diseño WEB. El mismo sufrirá algunas modificaciones de HTML. El contenido consiste en un sitio WEB para el micro-emprendimiento de mi mujer, bordados a mano e insumos para bordado.
 
-Objetivo del curso:
-    - La idea para este curso de JS es implementar el Shop online de la venta de insumos para bordado. 
-Objetivos Secundarios:
-    - Implementar el sistema para cotización de bordados a pedido e interfaz para compra de módulos de cursos de bordado.
+Consideraciones:
 
-A implementar: 
+    - Se puede ingresar al carrito desde cualquier page del sitio web, con excepción del inicio, cuando se clicke sobre el carrito en esta pagina de inicio se redirigira a la pagina del SHOP.
+    - El usuario, siempre y cuando no este loggeado, recibirá una cuenta de invitado con la cual podrá adherir items al carrito. Al momento de querer realizar la compra se le solicitará al usuario que inicie sesión o cree una cuenta. Como el carrito de invitado se guarda en el localStorage este persistira en el navegador y se utilizará para modificar o guardar el carrito del usuario una vez que inicia su sesión(solo por solicitud de compra).
+    - El usuario que realice el loggin previamente conservará su carrito conforme sea el estado de este en el LocalStorage.
+    - La persistencia del inicio de sesion del usuario se realiza mediante el SessionStorage, por ende al cerrar el navegador se deberá iniciar sesión nuevamente.
 
-    --> USUARIO:
-         - Creación de usuario. Guardado de datos; nombre y apellido, email, telefono, edad, DNI, domicilio/s de entrega, medios de pago. Asignación de usuario y contraseña.
-         - Loggeo de usuario. Aviso de usuario no existente, aviso de contraseña incorrecta. 
-    --> SHOP:
-        - Creación de productos. Código, nombre, precio, stock inicial.
-    
-    --> CARRO:
-        - Creación de carrito con productos agregados y valores totales de la compra. Verificar si aplica descuentos, sumar gastos de envio.
+    Mercadopago:
 
-Entrega de Desafio 1:
+        - Para la implementación de mercadopago, para no recurrir a backend, se utiliza un link generado mediante un POST a la API de Mercadolibre.
+        - El usuario para recibir el pago esta Hardcoded en el frontend (no es admisible esto, pero permite no utilizar backend para este curso).
+        - Para poder completar el proceso de compra, debido al ambiente sandbox se deberá:
 
-        - Ingresar al inicio del sitio web e ingresar al SHOP por el navbar.
-        - Al ingresar se activará el Script del shop. En el mismo se mostrarán los productos listados con posibilidad de compra.
-        - Completar en el prompt el item tal como aparece en el listado (sin el guión).
-        - Se mostrará el stock disponible. Y a continuación se solicitará la cantidad que se desea enviar al carrito.
-        - Se reducirá la cantidad indicada del stock (a futuro el stock solo disminuirá cuando se complete la compra).
-        - Se sumara el producto y la cantidad al carrito.
-        - Finalmente se puede optar por no agregar mas productos y obtener el total de la compra o seguir agregando productos.
+                Loggear con el siguiente usuario comprador:
+                                                 usuario: test_user_82609905@testuser.com
+                                                 password: qatest1955
+        - Datos de tarjeta de prueba;   numero: 4509 9535 6623 3704
+                                        Fecha: 11/25 o superior
+                                        Codigo seguridad: 123
+                                        Nombre: APRO para resolver la compra como aprobada
+                                                CONT para resolver la compra como pendiente
+                                                de ingresar otra opcion la compra será rechazada.
+        (También pueden utilizarse las demás tarjetas que se encuentra en la pagina de mercadopago/developers)
 
-        Controles implementados :
-            - Cantidad <= al stock.
-            - Cantidad > 0.
+
+
+
             
 
 

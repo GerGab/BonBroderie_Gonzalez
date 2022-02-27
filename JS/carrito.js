@@ -2,6 +2,7 @@
 class carrito{
     constructor(){
         this.items = [];
+        this.total = 0;
     }
 //  agregar producto al carrito
     agregar (_producto,_cantidad){  
@@ -27,21 +28,20 @@ class carrito{
     }
 
 
-    quitar (_producto){
+    quitar ({id:prodId}){
         this.items.forEach((_item) => {
-            if (_item[0].id==_producto.id){
+            if (_item[0].id==prodId){
                     this.items.splice(this.items.indexOf(_item), 1);
                 }                  
         })
     }
 
     ticket (){                                  // consultar el total del carrito
-        let total =0;
+        this.total = 0;
         this.items.forEach((_item) => {
-            total += _item[0].precio * _item[1];
+            this.total += _item[0].precio * _item[1];
         })
-        subTotal.innerText=`Subtotal: $${total}`;
-
+        subTotal.innerText=`Subtotal: $${this.total}`;
     }
 
     guardar ({user}){
@@ -54,6 +54,19 @@ class carrito{
         _items.forEach((_item) =>{
             this.agregar(_item[0],_item[1]);
         })
+    }
+
+    cerrarCompra(){
+        this.items.forEach(_item =>{
+            productos.forEach(_producto =>{
+                (_producto.id==_item[0].id) && _producto.retirar_stock(_item[1])
+            })
+        })
+        this.vaciar();
+    }
+
+    vaciar(){
+        this.items = [];
     }
         
 }
