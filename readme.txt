@@ -9,6 +9,8 @@ Consideraciones:
     - El usuario que realice el loggin previamente conservará su carrito conforme sea el estado de este en el LocalStorage.
     - La persistencia del inicio de sesion del usuario se realiza mediante el SessionStorage, por ende al cerrar el navegador se deberá iniciar sesión nuevamente.
 
+    NOTA: Usuarios persistentes solo aquellos creados en usuarios.js, los usuarios creados por el sitio solo estarán vigentes mientras se mantenga la sesión abierta.
+
     Mercadopago:
 
         - Para la implementación de mercadopago, para no recurrir a backend, se utiliza un link generado mediante un POST a la API de Mercadolibre.

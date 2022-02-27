@@ -14,7 +14,7 @@ class usuario{
 // usuario creado por default
 const usuarios = []
 usuarios.push(new usuario("invitado","0000","n/a","n/a","n/a","n/a","n/a","n/a"))
-usuarios.push(new usuario("anitabon","1234","animail@gmail.com","Ana","Bonessa","1142454687","99250250","Calle Falsa 1234"));
-usuarios.push(new usuario("ger","1234","germail@gmail.com","German","Gonzalez","1142454687","99250250","Calle Falsa 1234"));
+usuarios.push(new usuario("Usuario1","1234","Usuario1@gmail.com","Laura","Milanesio","1142454687","99250250","Calle Falsa 1234"));
+usuarios.push(new usuario("Usuario2","1234","Usuario2@gmail.com","Gerardo","Pretto","1142454687","99250250","Calle Falsa 1234"));
 
 
